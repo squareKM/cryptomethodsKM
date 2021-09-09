@@ -30,5 +30,35 @@ for i in range(0,20,1):
       CM_finder(i,j,k,PC)
 
 print(PC)
+aa = 0
+for i in range(0,20,1):
+  aa += PC[i]
 
-ZeroMatrix = zeromatrix(20,20)
+print("TEST =",aa)
+
+def CM_finder1(x,y,z,q):
+  if table_array[x][y] == z:
+    q[y][z] += prob_array[0][y] * prob_array[1][x]
+
+PMC = zeromatrix(20,20)
+
+for i in range(0,20,1): 
+  for j in range(0,20,1):
+    for k in range(0,20,1):
+      CM_finder1(i,j,k,PMC)
+
+print(PMC)
+aa = 0
+for i in range(0,20,1): 
+  for j in range(0,20,1):
+    aa += PMC[i][j]
+
+print("TEST =",aa)
+
+PM_C = PMC
+
+for i in range(0,20,1): 
+  for j in range(0,20,1):
+    PM_C[i][j] = PM_C[i][j]/PC[j]
+
+print(PM_C)
