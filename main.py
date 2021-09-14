@@ -133,7 +133,6 @@ for i in range(20):
     if LOL3[i][j]:
       break
       
-print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print(LOL3)
 print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
@@ -143,3 +142,13 @@ for i in range(20):
       print("M[",np.around(j,4),"] => C[",i,"]")
 
 print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+a33 = 0
+a44 = 0
+
+for i in range(20):
+  for j in range(20):
+    a33+=PM_C[j][i]*LOL1[i][j]
+  a44 += (1 - a33)*PC[i]
+  a33 = 0
+print(a44)
